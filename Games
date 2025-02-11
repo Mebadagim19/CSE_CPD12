@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    cin >> n;
+
+    int home_uniforms[30], guest_uniforms[30];
+
+    for (int i = 0; i < n; ++i) {
+        cin >> home_uniforms[i] >> guest_uniforms[i];
+    }
+
+    int count = 0;
+
+    for (int i = 0; i < n; ++i) {
+        for (int j = 0; j < n; ++j) {
+            if (i != j && home_uniforms[i] == guest_uniforms[j]) {
+                count++;
+            }
+        }
+    }
+
+    cout << count << endl;
+
+    return 0;
+}
