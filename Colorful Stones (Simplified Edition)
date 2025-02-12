@@ -1,0 +1,21 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    string s, t;
+    cin >> s >> t;
+
+    int position = 0;  // Initial 0-based position (first stone)
+
+    for (char instruction : t) {
+        if (s[position] == instruction) {
+            position++;
+        }
+    }
+
+    // Output the final 1-based position
+    cout << position + 1 << endl;
+
+    return 0;
+}
