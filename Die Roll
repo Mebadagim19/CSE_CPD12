@@ -1,0 +1,29 @@
+#include <iostream>
+using namespace std;
+
+int gcd(int a, int b) {
+    return b == 0 ? a : gcd(b, a % b);
+}
+
+int main() {
+    int Y, W;
+    cin >> Y >> W;
+
+    // Highest roll among Yakko and Wakko
+    int highest = max(Y, W);
+
+    // Number of outcomes Dot needs to win
+    int favorable_outcomes = 6 - highest + 1;
+
+    // Total possible outcomes on a six-sided die
+    int total_outcomes = 6;
+
+    // Simplifying the fraction
+    int divisor = gcd(favorable_outcomes, total_outcomes);
+    int numerator = favorable_outcomes / divisor;
+    int denominator = total_outcomes / divisor;
+
+    cout << numerator << "/" << denominator << endl;
+
+    return 0;
+}
